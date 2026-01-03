@@ -41,7 +41,7 @@
                 </div>
             </div>
             <canvas id="canvas" ></canvas>
-              <div id="mobile-instruction" class="blink">
+              <div id="mobile-instruction" class="blink" style="display: none;">
                 Double Tap on Heart for sound
             </div>
         </div>
@@ -215,16 +215,22 @@
         
     } )();
 
+        setTimeout(function () {
+            const el = document.getElementById("mobile-instruction");
+            if (el) el.style.display = "block";
+        }, 6000);
 
+
+        // Double tap detection
         let lastTap = 0;
-        document.addEventListener("click", function (e) {
+        document.addEventListener("click", function () {
             const currentTime = new Date().getTime();
             const tapLength = currentTime - lastTap;
 
-            if (tapLength < 3000 && tapLength > 0) {
-                // double tap detected
+            if (tapLength < 1500 && tapLength > 0) {
+                // Double tap detected
                 const el = document.getElementById("mobile-instruction");
-                if (el) el.remove();  // remove the div completely
+                if (el) el.remove(); // Remove the instruction div
             }
 
             lastTap = currentTime;
