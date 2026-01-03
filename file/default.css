@@ -128,20 +128,26 @@
             cursor: pointer;
         }
 
-        .say {
-            margin: 5px 0;
-        }
+
 
         #mobile-instruction  {
                 position: fixed;
                 left: 0;
                 bottom: 0;
-                margin: 45px;
+                margin: 50px;
                 padding: 10px;
-                font-size: 12px;
+                font-size: 18px;
         }
 
+        .blink {
+            animation: blinkSmooth 3s ease-in-out infinite;
+        }
 
+        @keyframes blinkSmooth {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
         /* Mobile Styles */
         @media (max-width: 768px) {
             #main {
@@ -215,29 +221,84 @@
         }
 
         /* Tablet Styles */
-        @media (max-width: 1024px) {
+        @media (max-width: 1023px) {
             #wrap {
                 margin-top: 15px;
             }
 
-            #code {
-                max-width: 300px;
-                font-size: clamp(15px, 2.5vw, 15px);
+     
+            
+            #code img {
+                max-width: 320px;
+                margin-bottom: 25px;
             }
 
-            #code img {
-                max-width: 150px;
-                margin-bottom: 10px;
+                
+            #text {
+                /* position: absolute;
+                width: 90%;
+                max-width: 272px;
+                height: auto;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                text-align: center; */
+
+                width: 90%;
+                max-width: 450px;
+                height: 100%;
+                top: 80px;
+                position: absolute;
+                left: 33%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10
+                    
             }
+
+            #code {
+                display: none;
+                width: 100%;
+                max-width: 440px;
+                color: rgb(196, 255, 255);
+                font-size: 20px;
+                margin-top: 45px;
+                line-height: 25px;
+                font-weight: bolder;
+                font-size: 25px
+                
+
+            }
+
+            #code .say{
+                margin: 10px 0;
+            }
+                       
+            
+            #canvas {
+            width: 100%;
+            height: 2000px;
+            max-width: 1100px;
+            max-height: 980px;
+            display: block;
+            position: relative;
+            background-color: #000;
+            }
+
             
            
         }
 
-        @media (min-width : 1025px) {
+        @media (min-width : 1024px) {
             
         #mobile-instruction {
             display: none;
         
+        }
+
+        .say {
+            margin: 5px 0;
         }
         }
 
