@@ -53,7 +53,7 @@
             text-align: center; */
 
             width: 90%;
-            max-width: 320px;
+            max-width: 360px;
             height: 600px;
             top: 80px;
             position: absolute;
@@ -67,7 +67,7 @@
         #code {
             display: none;
             color: rgb(196, 255, 255);
-            font-size: 16px;
+            font-size: 20px;
             margin-top: 45px;
             line-height: 25px;
             font-size: larger;
@@ -131,6 +131,16 @@
         .say {
             margin: 5px 0;
         }
+
+        #mobile-instruction  {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                margin: 15px;
+                padding: 2px;
+                font-size: 12px;
+        }
+
 
         /* Mobile Styles */
         @media (max-width: 768px) {
@@ -205,18 +215,30 @@
         }
 
         /* Tablet Styles */
-        @media (min-width: 769px) and (max-width: 1024px) {
+        @media (max-width: 1024px) {
             #wrap {
                 margin-top: 15px;
             }
 
             #code {
-                font-size: clamp(13px, 2.5vw, 15px);
+                max-width: 300px;
+                font-size: clamp(15px, 2.5vw, 15px);
             }
 
             #code img {
                 max-width: 150px;
+                margin-bottom: 10px;
             }
+            
+           
+        }
+
+        @media (min-width : 1025px) {
+            
+        #mobile-instruction {
+            display: none;
+        
+        }
         }
 
 /* 
